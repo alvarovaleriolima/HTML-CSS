@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+/* Estilos gerais para o body */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    background-color: rgb(209, 209, 209);
+}
+
+/* Estilo para o título */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Contêiner para as imagens, centraliza e organiza as imagens lado a lado */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adiciona um espaço entre as imagens */
+    margin-bottom: 20px;
+}
+
+/* Estilo para as imagens */
+img {
+    width: 300px; /* Define o tamanho fixo das imagens */
+    height: auto;
+    border-radius: 8px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra suave */
+}
+
+/* Estilo para o link "Página inicial" */
+p a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

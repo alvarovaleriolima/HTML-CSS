@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jogo da Cobrinha</title>
+<style>
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#jogo {
+  background-color: #fff;
+  border: 2px solid #aaaaaa;
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+
+#cobrinha {
+  background-color: green;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+#comida {
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+</style>
+</head>
+<body>
+<div id="jogo">
+  <div id="cobrinha"></div>
+  <div id="comida"></div>
+</div>
+
+<script>
+const jogo = document.getElementById("jogo");
+const cobrinha = document.getElementById("cobrinha");
+const comida = document.getElementById("comida");
+
+let cobrinhaX = 100;
+let cobrinhaY = 100;
+let comidaX = 200;
+let comidaY = 200;
+let direcao = "direita";
+
+function atualizarCobrinha() {
+  if (direcao === "direita") {
+    cobrinhaX += 20;
+  } else if (direcao === "esquerda") {
+    cobrinhaX -= 20;
+  } else if (direcao === "baixo") {
+    cobrinhaY += 20;
+  } else if (direcao === "cima") {
+    cobrinhaY -= 20;
+  }
+
+  cobrinha.style.left = cobrinhaX + "px";
+  cobrinha.style.top = cobrinhaY + "px";
+
+  if (cobrinhaX === comidaX && cobrinhaY === comidaY) {
+    gerarComida();
+  }
+}
+
+function gerarComida() {
+  comidaX = Math.floor(Math.random() * 20) * 20;
+  comidaY = Math.floor(Math.random() * 20) * 20;
+
+  comida.style.left = comidaX + "px";
+  comida.style.top = comidaY + "px";
+}
+
+document.addEventListener("keydown", (evento) => {
+  if (evento.key === "ArrowRight" && direcao !== "esquerda") {
+    direcao = "direita";
+  } else if (evento.key === "ArrowLeft" && direcao !== "direita") {
+    direcao = "esquerda";
+  } else if (evento.key === "ArrowDown" && direcao !== "cima") {
+    direcao = "baixo";
+  } else if (evento.key === "ArrowUp" && direcao !== "baixo") {
+    direcao = "cima";
+  }
+});
+
+setInterval(atualizarCobrinha, 200);
+
+gerarComida();
+</script>
+
+</body>
+</html>
