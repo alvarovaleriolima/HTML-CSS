@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <h1>Exemplo de Formulário</h1>
+    <form action="cadastro.php" method="get" autocomplete="on">
+        <fieldset>
+            <legend>Sexo</legend>
+            <!-- input radio, só pode ser escolhido uma opção, e para isso, em name colocar igual -->
+            <input type="radio" name="sexo" id="isxmas" value="M" checked> 
+            <label for="isxmas">Masculino</label> <br>
+            <input type="radio" name="sexo" id="isxfem" value="F">
+            <label for="isxfem">Feminino</label> <br>
+            <!-- Para manter um já marcado por padrão, usar checked, como acima. Para checkbox, podem ser macardos com checked mais de uma opção-->
+        </fieldset>
+        <fieldset>
+            <legend>Esportes favoritos</legend>
+            <!-- <br> para fazer a quebra de linha, se não tiver, ficará um na frente do outro-->
+            <!-- input checkbox, podem ser marcadas mais de uma opção-->
+            <input type="checkbox" name="esfut" id="iesfut" value="Futebol"> 
+            <label for="iesfut">Futebol</label> <br> 
+            <input type="checkbox" name="esbas" id="iesbas" value="Basquete">
+            <label for="iesbas">Basquete</label> <br>
+            <input type="checkbox" name="esmtb" id="iesmtb" value="MTB">
+            <label for="iesmtb">MTB</label> <br>
+            <input type="checkbox" name="esten" id="iesten" value="tenis">
+            <label for="iesten">Tênis</label> <br>
+            <input type="checkbox" name="esvol" id="iesvol" value="volei">
+            <label for="iesvol">Volei</label> <br>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>
